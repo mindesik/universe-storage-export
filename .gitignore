@@ -1,0 +1,6 @@
+*.exe
+.DS_Store
+/.dropbox
+/export.json
+/Icon
+/config.json
