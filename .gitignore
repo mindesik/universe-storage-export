@@ -1,6 +1,6 @@
 *.exe
 .DS_Store
-/.dropbox
-/export.json
+.dropbox
+export.json
+config.json
 /Icon
-/config.json
