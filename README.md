@@ -14,6 +14,10 @@ Create file `config.json`:
 
 `"remoteURL": "https://..."` Remote url for HTTP POST requests
 
+`"login": "..."` Login for HTTP Basic auth
+
+`"password": "..."` Password for HTTP Basic auth
+
 ## Usage
 
 `export.exe` - Run export via HTTP POST

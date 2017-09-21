@@ -30,6 +30,8 @@ type Configuration struct {
 	Connection string
 	DbPath     string
 	RequestURL string
+	Login      string
+	Password   string
 }
 
 func main() {
@@ -48,7 +50,7 @@ func main() {
 	if method == "file" {
 		writeToFile(payload)
 	} else if method == "http" {
-		sendRequest(payload, config.RequestURL)
+		sendRequest(config, payload, config.RequestURL)
 	} else {
 		log.Fatal("Unknown argument: ", method)
 	}
@@ -147,9 +149,12 @@ func writeToFile(payload []byte) {
 }
 
 // Send HTTP POST request to import endpoint
-func sendRequest(payload []byte, url string) {
+func sendRequest(config Configuration, payload []byte, url string) {
 	fmt.Println("Sending request to remote...")
-	resp, err := http.Post(url, "application/json", strings.NewReader(string(payload)))
+	client := &http.Client{}
+	request, err := http.NewRequest("POST", url, strings.NewReader(string(payload)))
+	request.SetBasicAuth(config.Login, config.Password)
+	resp, err := client.Do(request)
 
 	if err != nil {
 		fmt.Println("Request connection error!")
