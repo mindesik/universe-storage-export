@@ -1,4 +1,4 @@
-Export tool for cs
+Export tool for cs written witg Go lang
 
 ## Building
 
