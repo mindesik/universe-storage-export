@@ -1,4 +1,4 @@
-Export tool for cs written witg Go lang
+Storage export tool for [universe-soft](http://www.universe-soft.ru/product/universe-krasota/) written with Go lang
 
 ## Configuration
 
