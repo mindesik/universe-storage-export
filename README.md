@@ -1,9 +1,5 @@
 Export tool for cs written witg Go lang
 
-## Building
-
-`$ env GOOS="windows" go build -o ./dist/export.exe src/src.go`
-
 ## Configuration
 
 Create file `config.json`:
@@ -20,6 +16,10 @@ Create file `config.json`:
 
 ## Usage
 
-`export.exe` - Run export via HTTP POST
+`./export.exe` - Run export via HTTP POST
 
-`export.exe file` - Run export to file (export.json)
+`./export.exe file` - Run export to file (export.json)
+
+## Building
+
+`$ env GOOS="windows" go build -o ./dist/export.exe src/src.go`
